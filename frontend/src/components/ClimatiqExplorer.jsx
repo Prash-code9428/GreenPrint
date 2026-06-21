@@ -253,7 +253,7 @@ const ClimatiqExplorer = ({ token }) => {
                   </div>
                 </div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '12px', marginTop: '16px' }}>
+                <div className="equivalents-grid">
                   {/* Tree equivalent */}
                   <div style={{ textAlign: 'center', background: '#fff', padding: '12px', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-color)' }}>
                     <Trees size={22} color="#10B981" style={{ margin: '0 auto 6px' }} />
@@ -286,7 +286,7 @@ const ClimatiqExplorer = ({ token }) => {
               Search the Climatiq database to find exact audit coefficient factors for specific activities.
             </p>
 
-            <form onSubmit={handleSearchSubmit} style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr auto', gap: '16px', alignItems: 'end', marginBottom: '24px' }}>
+            <form onSubmit={handleSearchSubmit} className="climatiq-search-form">
               <div className="form-group" style={{ marginBottom: 0 }}>
                 <label className="form-label">Search Query</label>
                 <div style={{ position: 'relative' }}>

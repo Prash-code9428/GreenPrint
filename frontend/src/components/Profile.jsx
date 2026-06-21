@@ -210,7 +210,7 @@ const Profile = ({ user, token, onProfileUpdated }) => {
 
             <div className="form-group">
               <label className="form-label" style={{ marginBottom: '12px' }}>Primary Transit Vehicle</label>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '12px' }}>
+              <div className="profile-vehicle-grid">
                 {[
                   { value: 'petrol', label: 'Petrol Sedan', icon: Car, desc: 'Unleaded petrol vehicle' },
                   { value: 'diesel', label: 'Diesel SUV', icon: Truck, desc: 'Heavier diesel vehicle' },

@@ -335,7 +335,7 @@ const Auth = ({ isOpen, onClose, onSuccess }) => {
 
                   <div className="form-group">
                     <label className="form-label" style={{ marginBottom: '10px' }}>Primary Transit Vehicle</label>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '10px' }}>
+                    <div className="auth-vehicle-grid">
                       {[
                         { value: 'petrol', label: 'Petrol Sedan', icon: Car },
                         { value: 'diesel', label: 'Diesel SUV', icon: Truck },

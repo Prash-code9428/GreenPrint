@@ -435,7 +435,7 @@ const SavingsCalculator = ({ user, token, onActivityLogged }) => {
               Carbon calculated dynamically for this log parameters.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', margin: '24px 0' }}>
+            <div className="calculator-impact-grid">
               <div style={{ padding: '16px', background: 'rgba(190, 18, 60, 0.04)', border: '1px solid rgba(190, 18, 60, 0.1)', borderRadius: 'var(--radius-md)', textAlign: 'center' }}>
                 <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>CO₂ Emitted</span>
                 <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--accent-red)', marginTop: '6px' }}>{emittedPrev} kg</div>
