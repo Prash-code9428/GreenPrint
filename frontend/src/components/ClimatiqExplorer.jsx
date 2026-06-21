@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Search, Globe, HelpCircle, ShieldAlert, RefreshCw, Smartphone, Trees, Fuel, Award, Compass, Zap } from 'lucide-react';
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell } from 'recharts';
+import { API_BASE } from '../config';
 
 const ClimatiqExplorer = ({ token }) => {
   // Database search states
@@ -80,7 +81,7 @@ const ClimatiqExplorer = ({ token }) => {
       if (category) params.append('category', category);
       if (region) params.append('region', region);
 
-      const res = await fetch(`/api/activities/climatiq/search?${params.toString()}`, {
+      const res = await fetch(`${API_BASE}/api/activities/climatiq/search?${params.toString()}`, {
         headers: {
           'Authorization': `Bearer ${token}`
         }

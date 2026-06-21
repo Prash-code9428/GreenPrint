@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, LogIn, UserPlus, AlertCircle, Eye, EyeOff, KeyRound, HelpCircle, CheckCircle2, Car, Truck, Bike, Zap } from 'lucide-react';
 import Modal from './Modal';
+import { API_BASE } from '../config';
 
 const Auth = ({ isOpen, onClose, onSuccess }) => {
   useEffect(() => {
@@ -72,7 +73,7 @@ const Auth = ({ isOpen, onClose, onSuccess }) => {
 
     if (authMode === 'login') {
       try {
-        const response = await fetch('/api/auth/login', {
+        const response = await fetch(`${API_BASE}/api/auth/login`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email: formData.email, password: formData.password })
@@ -104,7 +105,7 @@ const Auth = ({ isOpen, onClose, onSuccess }) => {
       };
 
       try {
-        const response = await fetch('/api/auth/register', {
+        const response = await fetch(`${API_BASE}/api/auth/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(payload)
@@ -128,7 +129,7 @@ const Auth = ({ isOpen, onClose, onSuccess }) => {
     setError('');
     
     try {
-      const res = await fetch('/api/auth/forgot-password/question', {
+      const res = await fetch(`${API_BASE}/api/auth/forgot-password/question`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email: formData.email })
@@ -151,7 +152,7 @@ const Auth = ({ isOpen, onClose, onSuccess }) => {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/forgot-password/reset', {
+      const res = await fetch(`${API_BASE}/api/auth/forgot-password/reset`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

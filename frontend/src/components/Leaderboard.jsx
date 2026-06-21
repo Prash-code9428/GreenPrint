@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Award, RefreshCw, Trophy, ShieldAlert, Sparkles } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const Leaderboard = () => {
   const [rankings, setRankings] = useState([]);
@@ -8,7 +9,7 @@ const Leaderboard = () => {
   const fetchRankings = async () => {
     setLoading(true);
     try {
-      const res = await fetch('/api/leaderboard');
+      const res = await fetch(`${API_BASE}/api/leaderboard`);
       const data = await res.json();
       if (res.ok) {
         setRankings(data);

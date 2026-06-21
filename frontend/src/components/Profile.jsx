@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { User, Check, RefreshCw, MapPin, Navigation, Plane, ShieldAlert, Car, Truck, Bike, Zap, HelpCircle, Apple, Trash2, KeyRound } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const Profile = ({ user, token, onProfileUpdated }) => {
   const securityQuestionsList = [
@@ -89,7 +90,7 @@ const Profile = ({ user, token, onProfileUpdated }) => {
     };
 
     try {
-      const res = await fetch('/api/auth/profile', {
+      const res = await fetch(`${API_BASE}/api/auth/profile`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

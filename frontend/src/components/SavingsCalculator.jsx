@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Plane, Navigation, Zap, HelpCircle, ShieldAlert, CheckCircle2, RefreshCw, Trash2, ShieldCheck, Heart } from 'lucide-react';
+import { API_BASE } from '../config';
 
 const SavingsCalculator = ({ user, token, onActivityLogged }) => {
   const [activeCategory, setActiveCategory] = useState('travel');
@@ -148,7 +149,7 @@ const SavingsCalculator = ({ user, token, onActivityLogged }) => {
     };
 
     try {
-      const res = await fetch('/api/activities/log', {
+      const res = await fetch(`${API_BASE}/api/activities/log`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -8,6 +8,7 @@ import Leaderboard from './components/Leaderboard';
 import Profile from './components/Profile';
 import Modal from './components/Modal';
 import ClimatiqExplorer from './components/ClimatiqExplorer';
+import { API_BASE } from './config';
 
 function App() {
   const [activeTab, setActiveTab] = useState('home');
@@ -38,7 +39,7 @@ function App() {
     if (!activeToken) return;
 
     try {
-      const res = await fetch('/api/auth/profile', {
+      const res = await fetch(`${API_BASE}/api/auth/profile`, {
         headers: {
           'Authorization': `Bearer ${activeToken}`
         }
