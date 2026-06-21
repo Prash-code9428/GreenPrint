@@ -1,5 +1,7 @@
 # 🍃 GreenPrint
 
+🚀 **Live Deployment:** [https://greenprint-1cma.onrender.com](https://greenprint-1cma.onrender.com)
+
 GreenPrint is a state-of-the-art climate ledger and geopolitical carbon footprint tracker. It enables individuals to estimate, simulate, and log personal carbon offsets and emissions, while contrasting their footprint with large-scale global realities.
 
 GreenPrint integrates a dual-mode database engine (Supabase Postgres with local JSON mock persistent fallback) and queries live auditing carbon coefficients directly using the **Climatiq API**.
@@ -60,7 +62,7 @@ GreenPrint integrates a dual-mode database engine (Supabase Postgres with local 
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/your-username/GreenPrint.git
+git clone https://github.com/Prash-code9428/GreenPrint.git
 cd GreenPrint
 ```
 
@@ -94,10 +96,21 @@ The application will be running locally at `http://localhost:5173/` and proxied 
 
 ---
 
-## 🌍 Hosting on Railway
+## 🌍 Hosting on Render
 
-1. Install the [Railway CLI](https://docs.railway.app/develop/cli).
-2. Run `railway login` to authenticate.
-3. Initialize the project with `railway init`.
-4. Link the database environment variables in the Railway dashboard.
-5. Deploy using `railway up`.
+### 1. Backend Web Service
+1. Create a new **Web Service** on Render pointing to your repository.
+2. Set the root directory to `backend`.
+3. Build Command: `npm install`
+4. Start Command: `npm start`
+5. Configure environment variables in Render:
+   * `SUPABASE_URL`, `SUPABASE_KEY`, `CLIMATIQ_API_KEY`, `JWT_SECRET`.
+
+### 2. Frontend Static Site
+1. Create a new **Static Site** on Render pointing to your repository.
+2. Set the root directory to `frontend`.
+3. Build Command: `npm run build`
+4. Publish Directory: `dist`
+5. Configure the environment variable:
+   * `VITE_API_URL` = Your backend web service URL (e.g. `https://greenprint-backend.onrender.com`).
+
